@@ -1,0 +1,40 @@
+{
+  "title": "Capitalism and Free Markets",
+  "description": "Voluntary exchange and private property rights lead to optimal outcomes through market forces",
+  "coreArchitecture": {
+    "centralConcept": "Voluntary exchange and private property rights lead to optimal outcomes through market forces",
+    "keyNarratives": "Rags-to-riches stories, invisible hand metaphor, creative destruction driving progress",
+    "invariantElements": "Property rights, price signals, individual economic freedom",
+    "example": "The iPhone story - individual profit motive leading to revolutionary innovation benefiting society"
+  },
+  "transmissionMechanisms": {
+    "primaryVectors": "Economic education, business media, personal experience with markets",
+    "requiredResources": "Basic economic literacy, examples of market success",
+    "easeOfTransmission": "Complex in theory but reinforced by daily market interactions",
+    "example": "Children learning through simple activities like lemonade stands or trading cards"
+  },
+  "selectionDefense": {
+    "environmentalFactors": "Thrives in periods of technological innovation and visible prosperity",
+    "defenseMechanisms": "Attributes failures to government intervention (\"not real capitalism\")",
+    "competitiveAdvantages": "Aligns with observable patterns of innovation and wealth creation",
+    "example": "Soviet Union's collapse serving as powerful narrative against alternative systems"
+  },
+  "evolutionPattern": {
+    "commonMutations": "From mercantilism to industrial to digital/platform capitalism",
+    "adaptationCapabilities": "Absorbing critiques through market-based solutions (e.g., intellectual property markets, prediction markets)",
+    "stabilityVolatility": "Core market mechanism persists while forms of capital/exchange evolve",
+    "example": "Evolution from physical markets to stock markets to cryptocurrency, each maintaining price discovery while expanding what can be traded"
+  },
+  "socialNetworkEffects": {
+    "feedbackLoops": "Success in capitalism increases belief in the system",
+    "groupIdentity": "Entrepreneur/investor culture, markets as moral framework",
+    "statusDynamics": "Wealth and business success as social proof of merit",
+    "example": "Silicon Valley culture where startup success confers both wealth and moral authority"
+  },
+  "emotionalHooks": {
+    "primaryEmotions": "Hope for personal success, pride in self-reliance, fear of alternatives",
+    "rewardMechanisms": "Material success, sense of earned achievement",
+    "motivationStructures": "Personal enrichment aligned with social good",
+    "example": "Entrepreneur narratives combining personal gain with changing the world for better"
+  }
+}

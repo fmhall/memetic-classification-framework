@@ -1,0 +1,40 @@
+{
+  "title": "Missionary Religions",
+  "description": "One of the most powerful memes in human history - religions that contain exclusive truth and must be shared",
+  "coreArchitecture": {
+    "centralConcept": "One's religion contains exclusive truth and path to salvation that must be shared",
+    "keyNarratives": "Stories of prophets, conversion tales, miraculous transformations",
+    "invariantElements": "Divine authority, universal applicability, moral imperative to spread",
+    "example": "Early Christian apostles spreading the gospel, facing persecution, yet converting entire regions"
+  },
+  "transmissionMechanisms": {
+    "primaryVectors": "Personal testimony, organized preaching, sacred texts, ritualistic practices",
+    "requiredResources": "Dedicated evangelists, meeting places, educational materials",
+    "easeOfTransmission": "Moderate complexity, but simplified through parables and personal narratives",
+    "example": "Mormon missionaries using a structured approach: initial contact, relationship building, staged revelations of doctrine"
+  },
+  "selectionDefense": {
+    "environmentalFactors": "Thrives during social upheaval, uncertainty, or cultural transitions",
+    "defenseMechanisms": "Faith-based epistemology, martyrdom narratives, prophecy fulfillment claims",
+    "competitiveAdvantages": "Offers comprehensive worldview, community support, eternal rewards",
+    "example": "Early Christianity absorbing pagan holidays while maintaining core doctrine, making transition easier for converts"
+  },
+  "evolutionPattern": {
+    "commonMutations": "Denominational splits, cultural adaptations, modernization of practices",
+    "adaptationCapabilities": "Incorporation of local customs, translation into new languages and contexts",
+    "stabilityVolatility": "Core salvation narrative remains while practices evolve",
+    "example": "Catholicism maintaining core doctrine while allowing indigenous practices in Latin America"
+  },
+  "socialNetworkEffects": {
+    "feedbackLoops": "Converting families creates multi-generational commitment",
+    "groupIdentity": "Strong in-group bonding through shared beliefs and practices",
+    "statusDynamics": "Recognition for bringing new converts, leadership roles for effective evangelists",
+    "example": "Megachurches creating complete social ecosystems: schools, dating pools, business networks"
+  },
+  "emotionalHooks": {
+    "primaryEmotions": "Fear of damnation, joy of salvation, sense of purpose",
+    "rewardMechanisms": "Community acceptance, spiritual experiences, answered prayers",
+    "motivationStructures": "Eternal life, divine approval, cosmic significance",
+    "example": "The intense emotional experience of \"being saved\" reinforcing belief and motivating evangelism"
+  }
+}

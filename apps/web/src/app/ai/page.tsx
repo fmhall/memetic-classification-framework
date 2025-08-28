@@ -1,36 +1,115 @@
 "use client";
 
-import { useChat } from "@ai-sdk/react";
-import { DefaultChatTransport } from "ai";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
+import { streamText } from "ai";
+import { useEcho, useEchoModelProviders, EchoSignIn } from "@merit-systems/echo-react-sdk";
+
+interface Message {
+	id: string;
+	role: "user" | "assistant";
+	content: string;
+}
 
 export default function AIPage() {
 	const [input, setInput] = useState("");
-	const { messages, sendMessage } = useChat({
-		transport: new DefaultChatTransport({
-			api: `${process.env.NEXT_PUBLIC_SERVER_URL}/ai`,
-		}),
-	});
-
+	const [messages, setMessages] = useState<Message[]>([]);
+	const [isLoading, setIsLoading] = useState(false);
+	const { isAuthenticated, user, balance } = useEcho();
+	const { openai } = useEchoModelProviders();
 	const messagesEndRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
 	}, [messages]);
 
-	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		const text = input.trim();
-		if (!text) return;
-		sendMessage({ text });
+		if (!text || isLoading || !isAuthenticated) return;
+
+		const userMessage: Message = {
+			id: Date.now().toString(),
+			role: "user",
+			content: text,
+		};
+
+		const assistantMessage: Message = {
+			id: (Date.now() + 1).toString(),
+			role: "assistant",
+			content: "",
+		};
+
+		setMessages((prev) => [...prev, userMessage, assistantMessage]);
 		setInput("");
+		setIsLoading(true);
+
+		try {
+			const { textStream } = await streamText({
+				model: await openai("gpt-4o-mini"),
+				messages: [
+					...messages.map((msg) => ({
+						role: msg.role,
+						content: msg.content,
+					})),
+					{ role: "user", content: text },
+				],
+			});
+
+			let fullText = "";
+			for await (const chunk of textStream) {
+				fullText += chunk;
+				setMessages((prev) => {
+					const newMessages = [...prev];
+					const lastMessage = newMessages[newMessages.length - 1];
+					if (lastMessage && lastMessage.role === "assistant") {
+						lastMessage.content = fullText;
+					}
+					return newMessages;
+				});
+			}
+		} catch (error) {
+			console.error("Error generating response:", error);
+			setMessages((prev) => {
+				const newMessages = [...prev];
+				const lastMessage = newMessages[newMessages.length - 1];
+				if (lastMessage && lastMessage.role === "assistant") {
+					lastMessage.content = "Sorry, I encountered an error. Please try again.";
+				}
+				return newMessages;
+			});
+		} finally {
+			setIsLoading(false);
+		}
 	};
 
+	if (!isAuthenticated) {
+		return (
+			<div className="flex flex-col items-center justify-center h-full space-y-4 p-4">
+				<div className="text-center">
+					<h2 className="text-xl font-semibold mb-2">Sign in to continue</h2>
+					<p className="text-muted-foreground mb-4">
+						You need to sign in with Echo to use AI features
+					</p>
+					<EchoSignIn />
+				</div>
+			</div>
+		);
+	}
+
 	return (
-		<div className="grid grid-rows-[1fr_auto] overflow-hidden w-full mx-auto p-4">
+		<div className="grid grid-rows-[auto_1fr_auto] overflow-hidden w-full mx-auto p-4">
+			{/* User info header */}
+			<div className="border-b pb-2 mb-4">
+				<div className="flex justify-between items-center text-sm">
+					<span>Welcome, {user?.name || user?.email}!</span>
+					<span>Balance: ${balance?.balance || 0}</span>
+				</div>
+			</div>
+
+			{/* Messages */}
 			<div className="overflow-y-auto space-y-4 pb-4">
 				{messages.length === 0 ? (
 					<div className="text-center text-muted-foreground mt-8">
@@ -49,22 +128,22 @@ export default function AIPage() {
 							<p className="text-sm font-semibold mb-1">
 								{message.role === "user" ? "You" : "AI Assistant"}
 							</p>
-							{message.parts?.map((part, index) => {
-								if (part.type === "text") {
-									return (
-										<div key={index} className="whitespace-pre-wrap">
-											{part.text}
-										</div>
-									);
-								}
-								return null;
-							})}
+							<div className="whitespace-pre-wrap">
+								{message.content}
+							</div>
 						</div>
 					))
+				)}
+				{isLoading && (
+					<div className="bg-secondary/20 mr-8 p-3 rounded-lg">
+						<p className="text-sm font-semibold mb-1">AI Assistant</p>
+						<div className="text-muted-foreground">Thinking...</div>
+					</div>
 				)}
 				<div ref={messagesEndRef} />
 			</div>
 
+			{/* Input form */}
 			<form
 				onSubmit={handleSubmit}
 				className="w-full flex items-center space-x-2 pt-2 border-t"
@@ -77,8 +156,9 @@ export default function AIPage() {
 					className="flex-1"
 					autoComplete="off"
 					autoFocus
+					disabled={isLoading}
 				/>
-				<Button type="submit" size="icon">
+				<Button type="submit" size="icon" disabled={isLoading || !input.trim()}>
 					<Send size={18} />
 				</Button>
 			</form>

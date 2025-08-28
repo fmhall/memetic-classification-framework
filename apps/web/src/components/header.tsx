@@ -2,8 +2,10 @@
 import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
 import UserMenu from "./user-menu";
+import { useEcho, EchoSignIn } from "@merit-systems/echo-react-sdk";
 
 export default function Header() {
+	const { isAuthenticated, user, balance, signOut } = useEcho();
 	const links = [
 		{ to: "/", label: "Home" },
 		{ to: "/dashboard", label: "Dashboard" },
@@ -23,6 +25,23 @@ export default function Header() {
 					})}
 				</nav>
 				<div className="flex items-center gap-2">
+					{isAuthenticated ? (
+						<div className="flex items-center gap-2 text-sm">
+							<span>Hi, {user?.name || user?.email}</span>
+							<span className="text-muted-foreground">
+								Balance: ${balance?.balance || 0}
+							</span>
+							<button
+								type="button"
+								onClick={signOut}
+								className="text-muted-foreground hover:text-foreground"
+							>
+								Sign out
+							</button>
+						</div>
+					) : (
+						<EchoSignIn />
+					)}
 					<ModeToggle />
 					<UserMenu />
 				</div>

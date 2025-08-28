@@ -1,15 +1,24 @@
-import { google } from "@ai-sdk/google";
-import { streamText, type UIMessage, convertToModelMessages } from "ai";
+// This route is no longer needed as we've migrated to Echo for AI calls
+// The AI functionality is now handled client-side using the Echo SDK
 
-export const maxDuration = 30;
+// import { google } from "@ai-sdk/google";
+// import { streamText, type UIMessage, convertToModelMessages } from "ai";
 
-export async function POST(req: Request) {
-	const { messages }: { messages: UIMessage[] } = await req.json();
+// export const maxDuration = 30;
 
-	const result = streamText({
-		model: google("gemini-2.0-flash"),
-		messages: convertToModelMessages(messages),
+// export async function POST(req: Request) {
+// 	const { messages }: { messages: UIMessage[] } = await req.json();
+
+// 	const result = streamText({
+// 		model: google("gemini-2.0-flash"),
+// 		messages: convertToModelMessages(messages),
+// 	});
+
+// 	return result.toUIMessageStreamResponse();
+// }
+
+export async function GET() {
+	return new Response("AI functionality has been migrated to Echo SDK", {
+		status: 200,
 	});
-
-	return result.toUIMessageStreamResponse();
 }
