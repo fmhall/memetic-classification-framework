@@ -1,3 +1,7 @@
+# What is this app?
+
+This app is a viewer and creator for memes. Input an idea, and the app classifies it and adds it to the memetic database. It fills out the framework, etc.
+
 # Memetic Classification Framework
 
 - [Introduction](#introduction)

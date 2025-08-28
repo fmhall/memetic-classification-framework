@@ -1,11 +1,15 @@
 "use client";
 
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Send } from "lucide-react";
-import { useRef, useEffect, useState } from "react";
+import {
+	EchoSignIn,
+	useEcho,
+	useEchoModelProviders,
+} from "@merit-systems/echo-react-sdk";
 import { streamText } from "ai";
-import { useEcho, useEchoModelProviders, EchoSignIn } from "@merit-systems/echo-react-sdk";
+import { Send } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 interface Message {
 	id: string;
@@ -23,7 +27,7 @@ export default function AIPage() {
 
 	useEffect(() => {
 		messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-	}, [messages]);
+	}, []);
 
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -76,7 +80,8 @@ export default function AIPage() {
 				const newMessages = [...prev];
 				const lastMessage = newMessages[newMessages.length - 1];
 				if (lastMessage && lastMessage.role === "assistant") {
-					lastMessage.content = "Sorry, I encountered an error. Please try again.";
+					lastMessage.content =
+						"Sorry, I encountered an error. Please try again.";
 				}
 				return newMessages;
 			});
@@ -87,10 +92,10 @@ export default function AIPage() {
 
 	if (!isAuthenticated) {
 		return (
-			<div className="flex flex-col items-center justify-center h-full space-y-4 p-4">
+			<div className="flex h-full flex-col items-center justify-center space-y-4 p-4">
 				<div className="text-center">
-					<h2 className="text-xl font-semibold mb-2">Sign in to continue</h2>
-					<p className="text-muted-foreground mb-4">
+					<h2 className="mb-2 font-semibold text-xl">Sign in to continue</h2>
+					<p className="mb-4 text-muted-foreground">
 						You need to sign in with Echo to use AI features
 					</p>
 					<EchoSignIn />
@@ -100,43 +105,41 @@ export default function AIPage() {
 	}
 
 	return (
-		<div className="grid grid-rows-[auto_1fr_auto] overflow-hidden w-full mx-auto p-4">
+		<div className="mx-auto grid w-full grid-rows-[auto_1fr_auto] overflow-hidden p-4">
 			{/* User info header */}
-			<div className="border-b pb-2 mb-4">
-				<div className="flex justify-between items-center text-sm">
+			<div className="mb-4 border-b pb-2">
+				<div className="flex items-center justify-between text-sm">
 					<span>Welcome, {user?.name || user?.email}!</span>
 					<span>Balance: ${balance?.balance || 0}</span>
 				</div>
 			</div>
 
 			{/* Messages */}
-			<div className="overflow-y-auto space-y-4 pb-4">
+			<div className="space-y-4 overflow-y-auto pb-4">
 				{messages.length === 0 ? (
-					<div className="text-center text-muted-foreground mt-8">
+					<div className="mt-8 text-center text-muted-foreground">
 						Ask me anything to get started!
 					</div>
 				) : (
 					messages.map((message) => (
 						<div
 							key={message.id}
-							className={`p-3 rounded-lg ${
+							className={`rounded-lg p-3 ${
 								message.role === "user"
-									? "bg-primary/10 ml-8"
-									: "bg-secondary/20 mr-8"
+									? "ml-8 bg-primary/10"
+									: "mr-8 bg-secondary/20"
 							}`}
 						>
-							<p className="text-sm font-semibold mb-1">
+							<p className="mb-1 font-semibold text-sm">
 								{message.role === "user" ? "You" : "AI Assistant"}
 							</p>
-							<div className="whitespace-pre-wrap">
-								{message.content}
-							</div>
+							<div className="whitespace-pre-wrap">{message.content}</div>
 						</div>
 					))
 				)}
 				{isLoading && (
-					<div className="bg-secondary/20 mr-8 p-3 rounded-lg">
-						<p className="text-sm font-semibold mb-1">AI Assistant</p>
+					<div className="mr-8 rounded-lg bg-secondary/20 p-3">
+						<p className="mb-1 font-semibold text-sm">AI Assistant</p>
 						<div className="text-muted-foreground">Thinking...</div>
 					</div>
 				)}
@@ -146,7 +149,7 @@ export default function AIPage() {
 			{/* Input form */}
 			<form
 				onSubmit={handleSubmit}
-				className="w-full flex items-center space-x-2 pt-2 border-t"
+				className="flex w-full items-center space-x-2 border-t pt-2"
 			>
 				<Input
 					name="prompt"

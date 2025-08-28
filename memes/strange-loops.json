@@ -1,40 +1,40 @@
 {
-  "title": "Strange Loops",
-  "description": "Systems that observe/refer to themselves create meaningful paradoxes and loops that are fundamental to consciousness and meaning",
-  "coreArchitecture": {
-    "centralConcept": "Systems that observe/refer to themselves create meaningful paradoxes and loops that are fundamental to consciousness and meaning",
-    "keyNarratives": "Bach's musical canons, Escher's drawings, Gödel's incompleteness theorems",
-    "invariantElements": "The presence of hierarchy that somehow \"loops back\" to itself in an unexpected way",
-    "example": "A security camera showing its own feed on the monitor it's filming, creating an infinite regression"
-  },
-  "transmissionMechanisms": {
-    "primaryVectors": "Academic writing, popular science books, mathematical/philosophical discussions",
-    "requiredResources": "Significant cognitive bandwidth, familiarity with abstract thinking",
-    "easeOfTransmission": "Relatively difficult due to complexity, but made accessible through metaphors and examples",
-    "example": "Hofstadter's use of engaging analogies and puzzles to transmit complex mathematical concepts"
-  },
-  "selectionDefense": {
-    "environmentalFactors": "Thrives in intellectual environments interested in consciousness, AI, mathematics",
-    "defenseMechanisms": "Its self-referential nature makes it resistant to reductionist criticism",
-    "competitiveAdvantages": "Provides a unified framework for understanding seemingly disparate phenomena",
-    "example": "When AI researchers try to disprove consciousness as \"just computation,\" the very act of making that argument becomes a strange loop"
-  },
-  "evolutionPattern": {
-    "commonMutations": "From pure mathematics to cognitive science to AI theory",
-    "adaptationCapabilities": "Has evolved to incorporate new discoveries in neuroscience and artificial intelligence",
-    "stabilityVolatility": "Core idea of self-reference remains stable while applications expand",
-    "example": "The concept has evolved from formal systems theory to discussions of artificial consciousness while maintaining its essential character"
-  },
-  "socialNetworkEffects": {
-    "feedbackLoops": "Understanding strange loops often leads to seeing them everywhere, reinforcing the concept",
-    "groupIdentity": "Creates a shared vocabulary among cognitive scientists, philosophers, and mathematicians",
-    "statusDynamics": "Mastery of the concept signals intellectual sophistication",
-    "example": "Communities of Hofstadter readers who share and discuss examples of strange loops they encounter"
-  },
-  "emotionalHooks": {
-    "primaryEmotions": "Wonder, intellectual excitement, the thrill of paradox",
-    "rewardMechanisms": "\"Aha!\" moments when recognizing new strange loops in unexpected places",
-    "motivationStructures": "Desire to understand consciousness and self-awareness",
-    "example": "The profound satisfaction of recognizing how one's own understanding of strange loops is itself a strange loop"
-  }
+	"title": "Strange Loops",
+	"description": "Systems that observe/refer to themselves create meaningful paradoxes and loops that are fundamental to consciousness and meaning",
+	"coreArchitecture": {
+		"centralConcept": "Systems that observe/refer to themselves create meaningful paradoxes and loops that are fundamental to consciousness and meaning",
+		"keyNarratives": "Bach's musical canons, Escher's drawings, Gödel's incompleteness theorems",
+		"invariantElements": "The presence of hierarchy that somehow \"loops back\" to itself in an unexpected way",
+		"example": "A security camera showing its own feed on the monitor it's filming, creating an infinite regression"
+	},
+	"transmissionMechanisms": {
+		"primaryVectors": "Academic writing, popular science books, mathematical/philosophical discussions",
+		"requiredResources": "Significant cognitive bandwidth, familiarity with abstract thinking",
+		"easeOfTransmission": "Relatively difficult due to complexity, but made accessible through metaphors and examples",
+		"example": "Hofstadter's use of engaging analogies and puzzles to transmit complex mathematical concepts"
+	},
+	"selectionDefense": {
+		"environmentalFactors": "Thrives in intellectual environments interested in consciousness, AI, mathematics",
+		"defenseMechanisms": "Its self-referential nature makes it resistant to reductionist criticism",
+		"competitiveAdvantages": "Provides a unified framework for understanding seemingly disparate phenomena",
+		"example": "When AI researchers try to disprove consciousness as \"just computation,\" the very act of making that argument becomes a strange loop"
+	},
+	"evolutionPattern": {
+		"commonMutations": "From pure mathematics to cognitive science to AI theory",
+		"adaptationCapabilities": "Has evolved to incorporate new discoveries in neuroscience and artificial intelligence",
+		"stabilityVolatility": "Core idea of self-reference remains stable while applications expand",
+		"example": "The concept has evolved from formal systems theory to discussions of artificial consciousness while maintaining its essential character"
+	},
+	"socialNetworkEffects": {
+		"feedbackLoops": "Understanding strange loops often leads to seeing them everywhere, reinforcing the concept",
+		"groupIdentity": "Creates a shared vocabulary among cognitive scientists, philosophers, and mathematicians",
+		"statusDynamics": "Mastery of the concept signals intellectual sophistication",
+		"example": "Communities of Hofstadter readers who share and discuss examples of strange loops they encounter"
+	},
+	"emotionalHooks": {
+		"primaryEmotions": "Wonder, intellectual excitement, the thrill of paradox",
+		"rewardMechanisms": "\"Aha!\" moments when recognizing new strange loops in unexpected places",
+		"motivationStructures": "Desire to understand consciousness and self-awareness",
+		"example": "The profound satisfaction of recognizing how one's own understanding of strange loops is itself a strange loop"
+	}
 }

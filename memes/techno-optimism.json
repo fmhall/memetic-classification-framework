@@ -1,40 +1,40 @@
 {
-  "title": "Techno-Optimism",
-  "description": "Technological progress is the primary driver of human flourishing and problem-solving",
-  "coreArchitecture": {
-    "centralConcept": "Technological progress is the primary driver of human flourishing and problem-solving",
-    "keyNarratives": "Moore's Law, falling costs of goods, exponential innovation curves, previous technology pessimism proven wrong",
-    "invariantElements": "Faith in human ingenuity, inevitability of progress, abundance through innovation",
-    "example": "Norman Borlaug's Green Revolution saving a billion lives despite Malthusian predictions"
-  },
-  "transmissionMechanisms": {
-    "primaryVectors": "Tech success stories, startup culture, popular science communication, visible technological breakthroughs",
-    "requiredResources": "Examples of transformative technologies, historical progress data",
-    "easeOfTransmission": "High due to tangible benefits in everyday life",
-    "example": "Smartphone evolution demonstrating continuous improvement and expanded capabilities"
-  },
-  "selectionDefense": {
-    "environmentalFactors": "Thrives in periods of visible technological advancement",
-    "defenseMechanisms": "Points to historical track record of pessimists being wrong",
-    "competitiveAdvantages": "Offers actionable hope versus defensive pessimism",
-    "example": "COVID vaccine development speed countering general pessimism about pandemic response"
-  },
-  "evolutionPattern": {
-    "commonMutations": "From mechanical to digital to AI/biotech optimism",
-    "adaptationCapabilities": "Absorbs new fields (nanotech, space, longevity) while maintaining core thesis",
-    "stabilityVolatility": "Progress narrative remains while specific technologies change",
-    "example": "Evolution from \"computers will augment humans\" to \"AI will augment humans\" - same optimistic frame, new technology"
-  },
-  "socialNetworkEffects": {
-    "feedbackLoops": "Tech success creates wealth which funds more tech development",
-    "groupIdentity": "Builder culture, solve-it-with-technology mindset",
-    "statusDynamics": "Being seen as a creator/innovator rather than critic/pessimist",
-    "example": "Silicon Valley's builder culture where technological solutions are the default answer"
-  },
-  "emotionalHooks": {
-    "primaryEmotions": "Wonder at possibilities, excitement about future, disdain for stagnation",
-    "rewardMechanisms": "Seeing predictions come true, participating in progress",
-    "motivationStructures": "Being part of humanity's ascent, solving grand challenges",
-    "example": "SpaceX launches reigniting space age optimism and vision of multi-planetary humanity"
-  }
+	"title": "Techno-Optimism",
+	"description": "Technological progress is the primary driver of human flourishing and problem-solving",
+	"coreArchitecture": {
+		"centralConcept": "Technological progress is the primary driver of human flourishing and problem-solving",
+		"keyNarratives": "Moore's Law, falling costs of goods, exponential innovation curves, previous technology pessimism proven wrong",
+		"invariantElements": "Faith in human ingenuity, inevitability of progress, abundance through innovation",
+		"example": "Norman Borlaug's Green Revolution saving a billion lives despite Malthusian predictions"
+	},
+	"transmissionMechanisms": {
+		"primaryVectors": "Tech success stories, startup culture, popular science communication, visible technological breakthroughs",
+		"requiredResources": "Examples of transformative technologies, historical progress data",
+		"easeOfTransmission": "High due to tangible benefits in everyday life",
+		"example": "Smartphone evolution demonstrating continuous improvement and expanded capabilities"
+	},
+	"selectionDefense": {
+		"environmentalFactors": "Thrives in periods of visible technological advancement",
+		"defenseMechanisms": "Points to historical track record of pessimists being wrong",
+		"competitiveAdvantages": "Offers actionable hope versus defensive pessimism",
+		"example": "COVID vaccine development speed countering general pessimism about pandemic response"
+	},
+	"evolutionPattern": {
+		"commonMutations": "From mechanical to digital to AI/biotech optimism",
+		"adaptationCapabilities": "Absorbs new fields (nanotech, space, longevity) while maintaining core thesis",
+		"stabilityVolatility": "Progress narrative remains while specific technologies change",
+		"example": "Evolution from \"computers will augment humans\" to \"AI will augment humans\" - same optimistic frame, new technology"
+	},
+	"socialNetworkEffects": {
+		"feedbackLoops": "Tech success creates wealth which funds more tech development",
+		"groupIdentity": "Builder culture, solve-it-with-technology mindset",
+		"statusDynamics": "Being seen as a creator/innovator rather than critic/pessimist",
+		"example": "Silicon Valley's builder culture where technological solutions are the default answer"
+	},
+	"emotionalHooks": {
+		"primaryEmotions": "Wonder at possibilities, excitement about future, disdain for stagnation",
+		"rewardMechanisms": "Seeing predictions come true, participating in progress",
+		"motivationStructures": "Being part of humanity's ascent, solving grand challenges",
+		"example": "SpaceX launches reigniting space age optimism and vision of multi-planetary humanity"
+	}
 }

@@ -1,15 +1,14 @@
 "use client";
+import { EchoSignIn, useEcho } from "@merit-systems/echo-react-sdk";
 import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
 import UserMenu from "./user-menu";
-import { useEcho, EchoSignIn } from "@merit-systems/echo-react-sdk";
 
 export default function Header() {
 	const { isAuthenticated, user, balance, signOut } = useEcho();
 	const links = [
 		{ to: "/", label: "Home" },
 		{ to: "/dashboard", label: "Dashboard" },
-		{ to: "/ai", label: "AI Chat" },
 	] as const;
 
 	return (
