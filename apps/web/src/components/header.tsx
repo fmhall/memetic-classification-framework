@@ -2,7 +2,7 @@
 import { EchoSignIn, useEcho } from "@merit-systems/echo-react-sdk";
 import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
-import UserMenu from "./user-menu";
+import { Button } from "./ui/button";
 
 export default function Header() {
 	const { isAuthenticated, user, balance, signOut } = useEcho();
@@ -28,21 +28,16 @@ export default function Header() {
 						<div className="flex items-center gap-2 text-sm">
 							<span>Hi, {user?.name || user?.email}</span>
 							<span className="text-muted-foreground">
-								Balance: ${balance?.balance || 0}
+								${balance?.balance.toFixed(2) || 0}
 							</span>
-							<button
-								type="button"
-								onClick={signOut}
-								className="text-muted-foreground hover:text-foreground"
-							>
+							<Button type="button" variant="outline" onClick={signOut}>
 								Sign out
-							</button>
+							</Button>
 						</div>
 					) : (
 						<EchoSignIn />
 					)}
 					<ModeToggle />
-					<UserMenu />
 				</div>
 			</div>
 			<hr />
