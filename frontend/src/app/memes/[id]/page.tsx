@@ -15,14 +15,12 @@ import MemeDetail from '@/components/MemeDetail';
 import { notFound } from 'next/navigation';
 
 interface PageProps {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>;
 }
 
 export default async function MemePage({ params }: PageProps) {
-  // Convert the id parameter to a number
-  const id = parseInt(params.id);
+  const { id: idParam } = await params;
+  const id = parseInt(idParam, 10);
   
   if (isNaN(id)) {
     notFound();
