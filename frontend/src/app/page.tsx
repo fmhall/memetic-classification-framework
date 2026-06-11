@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import { db } from '@/db';
 import { memes } from '@/db/schema';
 import MemeCard from '@/components/MemeCard';

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -28,10 +29,10 @@ export default function RootLayout({
         <header className="bg-indigo-600 text-white shadow-md">
           <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center">
-              <a href="/" className="text-xl font-bold">Memetic Classification Framework</a>
+              <Link href="/" className="text-xl font-bold">Memetic Classification Framework</Link>
               <nav>
                 <ul className="flex space-x-4">
-                  <li><a href="/" className="hover:text-indigo-200">Home</a></li>
+                  <li><Link href="/" className="hover:text-indigo-200">Home</Link></li>
                   <li><a href="https://github.com/fmhall/memetic-classification-framework" target="_blank" className="hover:text-indigo-200">GitHub</a></li>
                 </ul>
               </nav>
