@@ -141,6 +141,71 @@ const STRAINS: Record<string, Strain> = {
       emotionalPull: 0.82,
     },
   },
+  'universal darwinism': {
+    color: '#65a30d',
+    binomial: 'Acidum universale',
+    tagline: 'The universal acid — slow to catch, dissolves every rival it touches.',
+    genome: {
+      contagion: 0.45,
+      resistance: 0.9,
+      virulence: 0.88,
+      adaptability: 0.95,
+      network: 0.5,
+      emotionalPull: 0.6,
+    },
+  },
+  'new atheism': {
+    color: '#0284c7',
+    binomial: 'Ratio militans',
+    tagline: 'Explosively viral on the attack, but burns hot and fades fast.',
+    genome: {
+      contagion: 0.78,
+      resistance: 0.5,
+      virulence: 0.9,
+      adaptability: 0.4,
+      network: 0.6,
+      emotionalPull: 0.7,
+    },
+  },
+  'the beginning of infinity': {
+    color: '#ca8a04',
+    binomial: 'Cognitio infinita',
+    tagline: 'Demanding to catch, but a near-unshakable lens once installed.',
+    genome: {
+      contagion: 0.4,
+      resistance: 0.85,
+      virulence: 0.45,
+      adaptability: 0.82,
+      network: 0.4,
+      emotionalPull: 0.8,
+    },
+  },
+  'effective accelerationism': {
+    color: '#dc2626',
+    binomial: 'Acceleratio thermodynamica',
+    tagline: 'A bull-market wildfire — wildly contagious, thrives on its enemies.',
+    genome: {
+      contagion: 0.92,
+      resistance: 0.55,
+      virulence: 0.8,
+      adaptability: 0.78,
+      network: 0.88,
+      emotionalPull: 0.82,
+    },
+  },
+  'ai doom': {
+    color: '#475569',
+    binomial: 'Timor existentialis',
+    tagline: 'Fear-borne and sticky; every capability jump feeds the dread.',
+    genome: {
+      contagion: 0.8,
+      resistance: 0.78,
+      virulence: 0.75,
+      adaptability: 0.55,
+      network: 0.82,
+      emotionalPull: 0.9,
+    },
+  },
 };
 
 /** A small, stable palette for memes that arrive without an authored strain. */
