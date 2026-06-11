@@ -1,3 +1,4 @@
+import { sql } from 'drizzle-orm';
 import { db } from './index';
 import {
   memes,
@@ -20,6 +21,9 @@ async function seed() {
   await db.delete(transmissionMechanisms);
   await db.delete(coreArchitecture);
   await db.delete(memes);
+
+  // Reset AUTOINCREMENT counters so a fresh seed always starts IDs at 1
+  await db.run(sql`DELETE FROM sqlite_sequence`);
 
   // Insert memes
   const missionaryReligions = await db.insert(memes).values({
