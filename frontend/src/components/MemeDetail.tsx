@@ -41,7 +41,7 @@ interface SectionProps {
 
 function Section({ no, title, trait, fields, example }: SectionProps) {
   return (
-    <div className="border border-line-strong bg-paper">
+    <div className="flex h-full flex-col border border-line-strong bg-paper">
       <div className="flex items-center justify-between border-b border-line bg-paper-2 px-3 py-1.5">
         <h3 className="flex items-baseline gap-2">
           <span className="font-mono-label text-[11px] text-blue">{no}</span>
@@ -51,9 +51,9 @@ function Section({ no, title, trait, fields, example }: SectionProps) {
           drives {TRAIT_META[trait].short}
         </span>
       </div>
-      <dl className="divide-y divide-line">
+      <dl className="flex flex-1 flex-col divide-y divide-line">
         {fields.map(({ label, value }) => (
-          <div key={label} className="grid grid-cols-[8.5rem_1fr] gap-2 px-3 py-2">
+          <div key={label} className="grid flex-1 grid-cols-[8.5rem_1fr] gap-2 px-3 py-2">
             <dt className="font-mono-label text-[10px] uppercase leading-snug text-ink-soft">
               {label}
             </dt>
@@ -75,12 +75,12 @@ function Section({ no, title, trait, fields, example }: SectionProps) {
 
 function EmptySection({ no, title }: { no: string; title: string }) {
   return (
-    <div className="border border-dashed border-line bg-paper">
+    <div className="flex h-full flex-col border border-dashed border-line bg-paper">
       <div className="flex items-center gap-2 border-b border-dashed border-line px-3 py-1.5">
         <span className="font-mono-label text-[11px] text-ink-faint">{no}</span>
         <span className="font-serif text-base font-semibold text-ink-soft">{title}</span>
       </div>
-      <p className="px-3 py-4 font-mono-label text-[11px] uppercase text-ink-faint">
+      <p className="flex flex-1 items-center px-3 py-4 font-mono-label text-[11px] uppercase text-ink-faint">
         — no specimen data on record —
       </p>
     </div>

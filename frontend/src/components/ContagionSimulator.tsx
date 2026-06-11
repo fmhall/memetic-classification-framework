@@ -506,7 +506,7 @@ export default function ContagionSimulator({ strains }: ContagionSimulatorProps)
 
       <div className="grid gap-0 lg:grid-cols-[1fr_19rem]">
         {/* Canvas plate */}
-        <div className="border-b border-line lg:border-b-0 lg:border-r">
+        <div className="flex items-center border-b border-line lg:border-b-0 lg:border-r">
           <canvas
             ref={canvasRef}
             style={{ width: '100%', height: 'auto', display: 'block' }}
@@ -517,11 +517,11 @@ export default function ContagionSimulator({ strains }: ContagionSimulatorProps)
         {/* Side panel */}
         <div className="flex flex-col divide-y divide-line">
           {/* Strain ledger */}
-          <div className="p-3">
+          <div className="flex flex-1 flex-col p-3">
             <div className="mb-2 font-mono-label text-[10px] uppercase text-ink-faint">
               Tab. A — viable strains / culture share
             </div>
-            <div className="flex flex-col gap-2.5">
+            <div className="flex flex-1 flex-col justify-between gap-2.5">
               {strains.map((strain, idx) => {
                 const count = snapshot.counts[idx] ?? 0;
                 const share = total ? (count / total) * 100 : 0;
@@ -612,7 +612,7 @@ export default function ContagionSimulator({ strains }: ContagionSimulatorProps)
           </div>
 
           {/* Field log */}
-          <div className="min-h-[104px] flex-1 p-3">
+          <div className="min-h-[104px] p-3">
             <div className="mb-2 font-mono-label text-[10px] uppercase text-ink-faint">
               Observation log
             </div>
