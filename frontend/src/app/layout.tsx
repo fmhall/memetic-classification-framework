@@ -1,21 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Newsreader, IBM_Plex_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const serif = Newsreader({
+  variable: "--font-serif",
   subsets: ["latin"],
+  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const mono = IBM_Plex_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
-  title: "Memetic Classification Framework",
-  description: "Explore memes classified using the six-component framework",
+  title: "Field Manual of Memetic Classification",
+  description:
+    "A technical manual for the classification, culture, and propagation of memes as living organisms.",
 };
 
 export default function RootLayout({
@@ -25,28 +29,57 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <header className="bg-indigo-600 text-white shadow-md">
-          <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center">
-              <Link href="/" className="text-xl font-bold">Memetic Classification Framework</Link>
-              <nav>
-                <ul className="flex space-x-4">
-                  <li><Link href="/" className="hover:text-indigo-200">Home</Link></li>
-                  <li><a href="https://github.com/fmhall/memetic-classification-framework" target="_blank" className="hover:text-indigo-200">GitHub</a></li>
-                </ul>
-              </nav>
-            </div>
+      <body className={`${serif.variable} ${mono.variable}`}>
+        {/* registration / trim bar */}
+        <div className="h-1.5 w-full bg-blue" />
+
+        <header className="border-b border-line-strong bg-paper">
+          <div className="mx-auto flex max-w-5xl items-stretch justify-between px-5 sm:px-8">
+            <Link
+              href="/"
+              className="flex items-center gap-3 border-r border-line py-2.5 pr-5"
+            >
+              <span className="font-mono-label text-[10px] uppercase leading-tight text-ink-soft">
+                Doc.
+                <br />
+                MX-06
+              </span>
+              <span className="font-serif text-base font-semibold tracking-tight text-ink">
+                Field Manual of <span className="italic">Memetic Classification</span>
+              </span>
+            </Link>
+            <nav className="flex items-stretch font-mono-label text-[11px] uppercase">
+              <Link
+                href="/"
+                className="snap flex items-center border-l border-line px-4 text-ink-soft hover:bg-blue hover:text-paper"
+              >
+                Index
+              </Link>
+              <a
+                href="https://github.com/fmhall/memetic-classification-framework"
+                target="_blank"
+                className="snap flex items-center border-l border-line px-4 text-ink-soft hover:bg-blue hover:text-paper"
+              >
+                Source
+              </a>
+            </nav>
           </div>
         </header>
+
         {children}
-        <footer className="bg-gray-800 text-white py-8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <p>© {new Date().getFullYear()} Memetic Classification Framework</p>
-              <p className="mt-2 text-gray-400 text-sm">
-                A framework for understanding how memes spread and evolve
-              </p>
+
+        {/* colophon */}
+        <footer className="mt-20 border-t border-line-strong">
+          <div className="mx-auto max-w-5xl px-5 py-8 sm:px-8">
+            <div className="flex flex-wrap items-end justify-between gap-4 font-mono-label text-[10px] uppercase text-ink-faint">
+              <div className="leading-relaxed">
+                <div className="text-ink-soft">Field Manual of Memetic Classification</div>
+                <div>Revised printing · No. MX-06 · Non-circulating</div>
+              </div>
+              <div className="text-right leading-relaxed">
+                <div>Set in Newsreader &amp; IBM Plex Mono</div>
+                <div>© MCMLXXXIV — present · all specimens viable</div>
+              </div>
             </div>
           </div>
         </footer>

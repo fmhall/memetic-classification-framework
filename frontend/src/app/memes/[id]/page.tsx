@@ -20,19 +20,17 @@ export default async function MemePage({ params }: PageProps) {
   if (!completeMeme) notFound();
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-8">
-          <Link href="/" className="text-indigo-600 hover:text-indigo-800 flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clipRule="evenodd" />
-            </svg>
-            Back to all memes
-          </Link>
-        </div>
-
-        <MemeDetail meme={completeMeme} />
+    <div className="mx-auto max-w-4xl px-5 py-8 sm:px-8">
+      <div className="mb-5">
+        <Link
+          href="/"
+          className="font-mono-label snap inline-flex items-center gap-1.5 border border-line px-2.5 py-1 text-[10px] uppercase text-ink-soft hover:border-blue hover:text-blue"
+        >
+          ← Return to index
+        </Link>
       </div>
+
+      <MemeDetail meme={completeMeme} />
     </div>
   );
 }

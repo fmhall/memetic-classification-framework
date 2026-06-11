@@ -2,18 +2,32 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8 text-center">
-        <div>
-          <h1 className="text-6xl font-extrabold text-indigo-600">404</h1>
-          <h2 className="mt-6 text-3xl font-bold text-gray-900">Page Not Found</h2>
-          <p className="mt-2 text-sm text-gray-600">
-            The page you&apos;re looking for doesn&apos;t exist or has been moved.
-          </p>
+    <div className="mx-auto max-w-2xl px-5 py-20 sm:px-8">
+      <div className="border-2 border-line-strong bg-paper">
+        <div className="flex items-center justify-between border-b-2 border-line-strong bg-paper-2 px-4 py-2">
+          <span className="font-mono-label text-[11px] uppercase text-blue">
+            Errata · specimen not located
+          </span>
+          <span className="font-mono-label text-[10px] uppercase text-ink-faint">
+            err. 404
+          </span>
         </div>
-        <div className="mt-8">
-          <Link href="/" className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-            Go back home
+        <div className="p-6">
+          <p className="font-mono-label text-[64px] font-semibold leading-none text-blue">
+            404
+          </p>
+          <h1 className="mt-3 font-serif text-2xl font-semibold text-ink">
+            No such culture in the collection.
+          </h1>
+          <p className="mt-2 max-w-md font-serif text-[14px] leading-relaxed text-ink-soft">
+            This meme never took hold in the population — no host in the archive carries
+            it, and the referenced plate could not be retrieved.
+          </p>
+          <Link
+            href="/"
+            className="font-mono-label snap mt-6 inline-block border border-blue bg-blue px-4 py-2 text-[11px] uppercase text-paper hover:bg-ink hover:border-ink"
+          >
+            ← Return to index
           </Link>
         </div>
       </div>

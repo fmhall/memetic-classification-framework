@@ -1,26 +1,114 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #f7f6ef;
+  --paper-2: #efeee4;
+  --paper-3: #e7e6da;
+  --ink: #17170f;
+  --ink-soft: #57564c;
+  --ink-faint: #8a897d;
+  --blue: #244cff;
+  --blue-soft: #5a78ff;
+  --line: #cbc9bc;
+  --line-strong: #1d1d15;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-paper-3: var(--paper-3);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-blue: var(--blue);
+  --color-line: var(--line);
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+  /* faint paper tooth — barely-there fibre noise, no gradients-as-language */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 3px,
+      rgba(23, 23, 15, 0.012) 3px,
+      rgba(23, 23, 15, 0.012) 4px
+    );
+}
+
+/* ---- manual primitives ---------------------------------------------------- */
+
+.font-mono-label {
+  font-family: var(--font-mono), "Courier New", monospace;
+  letter-spacing: 0.04em;
+}
+
+/* engineering dot-grid, used only inside diagram frames */
+.grid-paper {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(rgba(36, 76, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 76, 255, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* halftone dot field for fills / texture blocks */
+.halftone {
+  background-image: radial-gradient(var(--ink) 0.8px, transparent 0.9px);
+  background-size: 5px 5px;
+}
+
+/* registration ticks along a rule */
+.rule-blue {
+  border-color: var(--blue);
+}
+
+/* drop cap for editorial prose */
+.dropcap::first-letter {
+  font-family: var(--font-mono), monospace;
+  float: left;
+  font-size: 3.1rem;
+  line-height: 0.82;
+  padding: 0.1rem 0.6rem 0 0;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+/* mechanical snap on interactive bits */
+.snap {
+  transition:
+    background-color 90ms steps(2, end),
+    color 90ms steps(2, end),
+    border-color 90ms steps(2, end),
+    transform 60ms steps(1, end);
+}
+
+/* blinking terminal caret */
+@keyframes caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+.caret::after {
+  content: "_";
+  color: var(--blue);
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+input[type="range"] {
+  accent-color: var(--blue);
 }
