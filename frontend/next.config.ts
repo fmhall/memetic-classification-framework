@@ -1,10 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Lint errors pre-dating this plan are fixed by plan 003; suppress here so build passes
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  // Note: Next.js 16 removed the eslint.ignoreDuringBuilds option; ESLint is no longer
+  // run during `next build` at all. Pre-existing lint errors are fixed by plan 003.
 };
 
 export default nextConfig;
