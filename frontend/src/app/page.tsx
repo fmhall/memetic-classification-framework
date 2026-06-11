@@ -1,10 +1,9 @@
 import React from 'react';
-import { db } from '@/db';
-import { memes } from '@/db/schema';
+import { getAllMemes } from '@/db/queries';
 import MemeCard from '@/components/MemeCard';
 
 export default async function Home() {
-  const allMemes = await db.select().from(memes);
+  const allMemes = await getAllMemes();
 
   return (
     <main className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -17,8 +16,8 @@ export default async function Home() {
             Explore memes classified using the six-component framework for understanding memetic spread and evolution.
           </p>
           <div className="mt-8 flex justify-center">
-            <a 
-              href="https://github.com/fmhall/memetic-classification-framework" 
+            <a
+              href="https://github.com/fmhall/memetic-classification-framework"
               target="_blank"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >

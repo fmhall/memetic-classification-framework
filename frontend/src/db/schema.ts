@@ -71,10 +71,10 @@ export type EmotionalHooks = typeof emotionalHooks.$inferSelect;
 
 // Complete meme type with all components
 export type CompleteMeme = Meme & {
-  coreArchitecture: CoreArchitecture;
-  transmissionMechanisms: TransmissionMechanisms;
-  selectionDefense: SelectionDefense;
-  evolutionPattern: EvolutionPattern;
-  socialNetworkEffects: SocialNetworkEffects;
-  emotionalHooks: EmotionalHooks;
+  coreArchitecture: CoreArchitecture | null;
+  transmissionMechanisms: TransmissionMechanisms | null;
+  selectionDefense: SelectionDefense | null;
+  evolutionPattern: EvolutionPattern | null;
+  socialNetworkEffects: SocialNetworkEffects | null;
+  emotionalHooks: EmotionalHooks | null;
 };

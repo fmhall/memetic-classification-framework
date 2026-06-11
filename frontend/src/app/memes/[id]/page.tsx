@@ -1,16 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { db } from '@/db';
-import { 
-  memes, 
-  coreArchitecture, 
-  transmissionMechanisms, 
-  selectionDefense, 
-  evolutionPattern, 
-  socialNetworkEffects, 
-  emotionalHooks 
-} from '@/db/schema';
-import { eq } from 'drizzle-orm';
+import { getCompleteMeme } from '@/db/queries';
 import MemeDetail from '@/components/MemeDetail';
 import { notFound } from 'next/navigation';
 
@@ -21,45 +11,13 @@ interface PageProps {
 export default async function MemePage({ params }: PageProps) {
   const { id: idParam } = await params;
   const id = parseInt(idParam, 10);
-  
+
   if (isNaN(id)) {
     notFound();
   }
 
-  // Get the meme
-  const memeResult = await db.select().from(memes).where(eq(memes.id, id));
-  
-  if (!memeResult || memeResult.length === 0) {
-    notFound();
-  }
-  
-  const meme = memeResult[0];
-
-  // Get all components
-  const coreArchResults = await db.select().from(coreArchitecture).where(eq(coreArchitecture.memeId, id));
-  const transmissionResults = await db.select().from(transmissionMechanisms).where(eq(transmissionMechanisms.memeId, id));
-  const selectionResults = await db.select().from(selectionDefense).where(eq(selectionDefense.memeId, id));
-  const evolutionResults = await db.select().from(evolutionPattern).where(eq(evolutionPattern.memeId, id));
-  const socialNetworkResults = await db.select().from(socialNetworkEffects).where(eq(socialNetworkEffects.memeId, id));
-  const emotionalResults = await db.select().from(emotionalHooks).where(eq(emotionalHooks.memeId, id));
-  
-  const coreArch = coreArchResults.length > 0 ? coreArchResults[0] : null;
-  const transmission = transmissionResults.length > 0 ? transmissionResults[0] : null;
-  const selection = selectionResults.length > 0 ? selectionResults[0] : null;
-  const evolution = evolutionResults.length > 0 ? evolutionResults[0] : null;
-  const socialNetwork = socialNetworkResults.length > 0 ? socialNetworkResults[0] : null;
-  const emotional = emotionalResults.length > 0 ? emotionalResults[0] : null;
-
-  // Combine all data
-  const completeMeme = {
-    ...meme,
-    coreArchitecture: coreArch,
-    transmissionMechanisms: transmission,
-    selectionDefense: selection,
-    evolutionPattern: evolution,
-    socialNetworkEffects: socialNetwork,
-    emotionalHooks: emotional
-  };
+  const completeMeme = await getCompleteMeme(id);
+  if (!completeMeme) notFound();
 
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -72,7 +30,7 @@ export default async function MemePage({ params }: PageProps) {
             Back to all memes
           </Link>
         </div>
-        
+
         <MemeDetail meme={completeMeme} />
       </div>
     </div>

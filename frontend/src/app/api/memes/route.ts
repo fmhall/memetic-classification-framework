@@ -1,10 +1,9 @@
 import { NextResponse } from 'next/server';
-import { db } from '@/db';
-import { memes } from '@/db/schema';
+import { getAllMemes } from '@/db/queries';
 
 export async function GET() {
   try {
-    const allMemes = await db.select().from(memes);
+    const allMemes = await getAllMemes();
     return NextResponse.json(allMemes);
   } catch (error) {
     console.error('Error fetching memes:', error);
