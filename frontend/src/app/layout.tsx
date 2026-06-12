@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Newsreader, IBM_Plex_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
@@ -16,10 +16,43 @@ const mono = IBM_Plex_Mono({
   weight: ["400", "500", "600"],
 });
 
+const SITE_URL = "https://memetic-classification-framework.vercel.app";
+const SOCIAL_TITLE =
+  "A Field Manual for the Classification & Culture of Living Memes";
+const SOCIAL_DESCRIPTION =
+  "An in-vitro assay of cultural strains — six-trait genomes, fitness scores, and propagation under glass.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Field Manual of Memetic Classification",
   description:
     "A technical manual for the classification, culture, and propagation of memes as living organisms.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16.png", type: "image/png", sizes: "16x16" },
+    ],
+    apple: { url: "/apple-touch-icon.png", sizes: "180x180" },
+  },
+  manifest: "/site.webmanifest",
+  openGraph: {
+    type: "website",
+    title: SOCIAL_TITLE,
+    description: SOCIAL_DESCRIPTION,
+    url: "/",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SOCIAL_TITLE,
+    description: SOCIAL_DESCRIPTION,
+    images: ["/twitter-image.png"],
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#f7f6ef",
 };
 
 export default function RootLayout({

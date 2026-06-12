@@ -1,0 +1,13 @@
+{
+  "name": "A Field Manual for the Classification & Culture of Living Memes",
+  "short_name": "Memetic MX-06",
+  "description": "An in-vitro assay of cultural strains — six-trait genomes, fitness scores, and propagation under glass.",
+  "icons": [
+    { "src": "/favicon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/favicon-512.png", "type": "image/png", "sizes": "512x512" },
+    { "src": "/favicon-512.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" }
+  ],
+  "theme_color": "#f7f6ef",
+  "background_color": "#f7f6ef",
+  "display": "standalone"
+}
